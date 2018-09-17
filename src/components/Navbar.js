@@ -5,7 +5,7 @@ import Scoreboard from './Scoreboard'
 const Navbar = (props) => (
 
 <nav className="navbar navbar-dark bg-primary fixed-top">
-  <a className="navbar-brand" href="#">Clicky Game</a>
+  <a className="navbar-brand" href="/">Clicky Game</a>
   <ul className="nav justify-content-center">
   {
     props.guess ? <Guess guess={props.guess}/> : <li className="navbar-text">Click an image to begin!</li>
