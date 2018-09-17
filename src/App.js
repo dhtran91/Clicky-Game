@@ -3,6 +3,70 @@ import { ClickImage, Header, Navbar } from "./components";
 
 class App extends Component {
 
+  state = {
+    images: [
+      {
+        url:'Brian.jpg',
+        clicked: false
+      },
+      {
+        url:'Chris.jpg',
+        clicked: false
+      },
+      {
+        url:'Cleveland.jpg',
+        clicked: false
+      },
+      {
+        url:'Ernie.jpg',
+        clicked: false
+      },
+      {
+        url:'Quagmire2.jpg',
+        clicked: false
+      },
+      {
+        url:'Herbert.jpg',
+        clicked: false
+      },
+      {
+        url:'Herbert2.jpg',
+        clicked: false
+      },
+      {
+        url:'Lois.jpg',
+        clicked: false
+      },
+      {
+        url:'Maid.jpg',
+        clicked: false
+      },
+      {
+        url:'Meg.jpg',
+        clicked: false
+      },
+      {
+        url:'Peter-Deadpool.png',
+        clicked: false
+      },
+      {
+        url:'Peter.jpg',
+        clicked: false
+      },
+      {
+        url:'Quagmire.jpg',
+        clicked: false
+      },
+      {
+        url:'Stewie.jpg',
+        clicked: false
+      },
+      {
+        url:'Stewie2.jpeg',
+        clicked: false
+      }
+    ]
+  }
   importAll = (r) => {
     let images = {};
     r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
@@ -11,13 +75,19 @@ class App extends Component {
 
   images = this.importAll(require.context('./components/assets/images', false, /\.(png|jpe?g|svg)$/));
 
+  clickImageHandler = (e) => {
+    
+  }
   render() {
     return (
       <React.Fragment>
-        <Navbar />
+        <Navbar score="1" total="15"/>
         <Header />
         <div class="container">
-          <ClickImage src={this.images['Brian.jpg']} />
+        {
+          this.state.images.map(x => <ClickImage src={this.images[x.url]} onClick= clicked={x.clicked}/>)
+        }
+          {/* <ClickImage src={this.images['Brian.jpg']} />
           <ClickImage src={this.images['Chris.jpg']} />
           <ClickImage src={this.images['Cleveland.jpg']} />
           <ClickImage src={this.images['Ernie.jpg']} />
@@ -31,7 +101,7 @@ class App extends Component {
           <ClickImage src={this.images['Peter.jpg']} />
           <ClickImage src={this.images['Quagmire.jpg']} />
           <ClickImage src={this.images['Stewie.jpg']} />
-          <ClickImage src={this.images['Stewie2.jpeg']} />
+          <ClickImage src={this.images['Stewie2.jpeg']} /> */}
         </div>
 
       </React.Fragment>

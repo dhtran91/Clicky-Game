@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Guess = () => (
-    <li className="navbar-text">You guessed incorrectly/correctly!</li>
+const Guess = (props) => (
+    <li className="navbar-text">You guessed {props.guess}</li>
 )
           
 export default Guess;

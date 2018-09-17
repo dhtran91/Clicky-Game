@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Scoreboard = () => (
-    <li className="navbar-text">Score: _ | Top Score: _</li>
+const Scoreboard = (props) => (
+    <li className="navbar-text">Score: {props.score} Top Score: {props.total}</li>
 )
 
 export default Scoreboard;
