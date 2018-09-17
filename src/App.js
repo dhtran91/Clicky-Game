@@ -85,7 +85,7 @@ class App extends Component {
         <Header />
         <div class="container">
         {
-          this.state.images.map(x => <ClickImage src={this.images[x.url]} onClick= clicked={x.clicked}/>)
+          this.state.images.map(x => <ClickImage src={this.images[x.url]} />)
         }
           {/* <ClickImage src={this.images['Brian.jpg']} />
           <ClickImage src={this.images['Chris.jpg']} />
